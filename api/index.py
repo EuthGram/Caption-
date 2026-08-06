@@ -179,6 +179,13 @@ HTML_PAGE = f"""<!DOCTYPE html>
 
 
 @app.get("/", response_class=HTMLResponse)
+@app.get("/api/index", response_class=HTMLResponse)
 async def homepage() -> HTMLResponse:
-    """Serve the premium dark-UI status page."""
+    """Serve the premium dark-UI status page.
+
+    Registered under both "/" and "/api/index" because Vercel's rewrite
+    (source "/" -> destination "/api/index") passes the destination path
+    through to the ASGI app, not the original "/".
+    """
     return HTMLResponse(content=HTML_PAGE, status_code=200)
+   
