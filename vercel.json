@@ -7,7 +7,7 @@
       "maxDuration": 10
     },
     "api/webhook.py": {
-      "maxDuration": 15
+      "maxDuration": 10
     }
   }
 }
