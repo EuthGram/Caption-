@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/api/index" }
+  ],
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 10
+    },
+    "api/webhook.py": {
+      "maxDuration": 15
+    }
+  }
+}
